@@ -4,6 +4,7 @@ class Eljuego
 		@jugador2 = " "
 		@posjugador1 = 0
 		@posjugador2 = 0
+		@tableroGeneral  = %w{0 0 3 0 -2 0 0 0 -1 -2 0 0 0 0 0 0 0 -1 -2 0}
 	end 
 	def damePosicionJugador1
 		return @posjugador1
@@ -45,4 +46,26 @@ class Eljuego
 	def trampa2
 		return -5
 	end
+
+	def finalizoJugador1
+	if  @posjugador1 >= 19
+		return TRUE
+	else
+		return FALSE
+	end 
+	
+	end
+
+	def finalizoJugador2
+		if  @posjugador2 >= 19
+			return TRUE
+		else
+			return FALSE
+		end 
+	end
+
+	def analizarPosicion(posicion)
+		return @tableroGeneral[posicion].to_i
+	end
+
 end
