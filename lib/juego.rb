@@ -48,20 +48,13 @@ class Eljuego
 	end
 
 	def finalizoJugador1
-	if  @posjugador1 >= 19
-		return TRUE
-	else
-		return FALSE
-	end 
 	
+		return  @posjugador1 >= 19
 	end
 
 	def finalizoJugador2
-		if  @posjugador2 >= 19
-			return TRUE
-		else
-			return FALSE
-		end 
+		return  @posjugador2 >= 19
+
 	end
 
 	def analizarPosicion(posicion)
