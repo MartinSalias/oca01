@@ -20,8 +20,11 @@ class Eljuego
 		end
 	end
 	def tirarDadoJugador2 valor=0
-		r = Random.new
-		return 5 # r.rand(1...6) 
+		if valor == 0
+			return Random.rand(1...6) 
+		else
+			return valor
+		end
 	end
 	def avanzaJugador1(avanza1)
 		@posjugador1 += avanza1 
