@@ -11,19 +11,34 @@ get '/' do
 end
 
 post '/dado' do
-  
+  @flgGano = false
   if (@@jugadorTurno == 1)
-    avanza = @@game.tirarDadoJugador1
+    avanza = @@game.tirarDadoJugador1(4)
 	  @@dado = @@game.avanzaJugador1(avanza) 
 	  @@jugadorTurno= 2
-	  @@resultado1 = "Posicion #{ @@dado }"
+	  if (@@game.finalizoJugador1)
+	    @resultado = "Jugador 1 gano"
+	    @flgGano = true
+	  else 
+      @@resultado1 = "Posicion #{ @@dado }"
+	  end
   else
-    avanza= @@game.tirarDadoJugador2
+ 	  avanza= @@game.tirarDadoJugador2(5)
 	  @@dado = @@game.avanzaJugador2(avanza) 
 	  @@jugadorTurno= 1
-	  @@resultado2 = "Posicion #{ @@dado }"
+	  if (@@game.finalizoJugador2)
+	    @resultado = "Jugador 2 gano"
+	    @flgGano = true
+	  else
+	    @@resultado2 = "Posicion #{ @@dado }"
+	  end
   end
-  erb :juego
+  
+  if (@flgGano)
+    erb :feliz
+  else
+    erb :juego
+  end
 end
 
 
