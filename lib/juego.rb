@@ -12,15 +12,16 @@ class Eljuego
 	def damePosicionJugador2
 		return @posjugador2
 	end
-	def tirarDadoJugador1
-#		r = Random.new
-#		r.rand(1...6) 
-		return 4
+	def tirarDadoJugador1 valor=0
+		if valor == 0
+			return Random.rand(1...6) 
+		else
+			return valor
+		end
 	end
-	def tirarDadoJugador2
-#		r = Random.new
-#		r.rand(1...6) 
-		return 5
+	def tirarDadoJugador2 valor=0
+		r = Random.new
+		return 5 # r.rand(1...6) 
 	end
 	def avanzaJugador1(avanza1)
 		@posjugador1 += avanza1 

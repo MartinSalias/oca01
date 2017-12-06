@@ -8,13 +8,13 @@ describe "Quien llega primero" do
 	end
 	it "tirar dado jugador 1 y avanzar" do
 		game = Eljuego.new
-		avanza1=game.tirarDadoJugador1
+		avanza1 = game.tirarDadoJugador1 4
 		game.avanzaJugador1(avanza1).should == 4
 	end
 
 	it "tirar dado jugador 2 y avanzar" do
 		game = Eljuego.new
-		avanza2=game.tirarDadoJugador2
+		avanza2=game.tirarDadoJugador2 5
 		game.avanzaJugador2(avanza2).should == 5
 	end
 	it "retroceder jugador 1" do
