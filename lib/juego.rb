@@ -29,4 +29,20 @@ class Eljuego
 		@posjugador2 += avanza2 
 		return @posjugador2
 	end
+
+	def retrocesoJugador1(retrocede1)
+		@posjugador1 += retrocede1 
+		return @posjugador1
+	end
+	def retrocesoJugador2(retrocede2)
+		@posjugador2 += retrocede2 
+		return @posjugador2
+	end
+
+	def trampa1
+		return -4
+	end
+	def trampa2
+		return -5
+	end
 end
