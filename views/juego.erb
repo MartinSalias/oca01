@@ -2,9 +2,10 @@
 <h1>Quien llega primero</h1>
  
 <form method="post" action="/dado">
-  <input type= "submit"  value= "Tirar dado" />
+  <input type= "submit"  value= "Tirar dado <%= @@jugadorTurno %>" />
 </form>
 
-<p> Resultado: <%= @resultado %> </p>
+<p> Resultado Jugador 1: <%= @@resultado1 %> </p>
+<p> Resultado Jugador 2: <%= @@resultado2 %> </p>
 
 

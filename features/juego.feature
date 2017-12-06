@@ -5,6 +5,11 @@ Scenario: Portada
 
 Scenario: Inicio del juego
   Given Voy al sitio
-  When Tira un dado sale un 5
-  Then veo "Posicion 5"
+  When Tira un dado jugador 1 sale un 4
+  Then veo "Resultado Jugador 1: Posicion 4"
 
+Scenario: Inicio del juego
+  Given Voy al sitio
+  When Tira un dado jugador 1 sale un 4
+  When Tira un dado jugador 2 sale un 5
+  Then veo "Resultado Jugador 2: Posicion 5"
