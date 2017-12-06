@@ -28,5 +28,43 @@ describe "Quien llega primero" do
 		game.retrocesoJugador2(retroceso2).should == -5
 	end
 
+	it "finalizar juego jugador 1" do
+		game = Eljuego.new
+		game.avanzaJugador1(50)
+		game.finalizoJugador1.should == TRUE
+	end
+
+	it "finalizar juego jugador 2" do
+		game = Eljuego.new
+		game.avanzaJugador2(50)
+		game.finalizoJugador2.should == TRUE
+	end
+
+	it "No finalizar juego jugador 1" do
+		game = Eljuego.new
+		game.avanzaJugador1(15)
+		game.finalizoJugador1.should == FALSE
+	end
+
+	it "No finalizar juego jugador 2" do
+		game = Eljuego.new
+		game.avanzaJugador2(15)
+		game.finalizoJugador2.should == FALSE
+	end
+
+	it "Analizar posicion avanza" do
+		game = Eljuego.new
+		game.analizarPosicion(2).should == 3
+	end
+
+	it "Analizar posicion trampa" do
+		game = Eljuego.new
+		game.analizarPosicion(4).should == -2
+	end
+
+	it "Analizar posicion quedo quieto" do
+		game = Eljuego.new
+		game.analizarPosicion(3).should == 0
+	end
 end
 
